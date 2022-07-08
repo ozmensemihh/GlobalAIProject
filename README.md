@@ -12,7 +12,7 @@
             writer.writerow({'first_name': 'Lovely', 'last_name': 'Spam'})
             writer.writerow({'first_name': 'Wonderful', 'last_name': 'Spam'})
 
-* CSV okuma örnek
+* CSV okuma
 
     import csv
 
