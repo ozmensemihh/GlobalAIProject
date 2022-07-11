@@ -1,6 +1,7 @@
 #!/usr/bin/python3.8
 import numpy as np
 import pandas as pd
+from openpyxl.workbook import Workbook
 
 def veri_girdisi():
     öğrenci_verileri = []
@@ -66,6 +67,13 @@ not_limitleri = [
 harf_notları = ['FF', 'FD','DD','DC','CC','CB','BB','BA', 'AA']
 # DataFrame'de tutulan sayısal notları, verilen not limitlerine göre değerlendir
 df['Harf'] = np.select(not_limitleri, harf_notları)
-
+#Dataframe'de tutulan notların başarı durumlarının belirlenmesi
+for i in range(len(df)):
+    if df['Not'][i] <= 39:
+        df['Başarı'] = 'Kaldı'
+    else:
+        df['Başarı'] = 'Geçti'
+#Dataframe'deki verileri excel dosyasına yazdırma
+df.to_excel("Öğrenci_Not_Bilgi_Sistemi.xlsx")
 # display updated DataFrame
 print(df)
