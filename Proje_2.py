@@ -31,3 +31,18 @@ plt.show()
 #İngilizce filmlerin en yüksek imdb puanına sahip tür filmleri
 IMDB_puan_ingilizce = df[(df['Language'] == 'English') & (df['IMDB Score'] >= 8.0)]
 print(IMDB_puan_ingilizce["Genre"])
+
+#Hindi filmlerin ortalama runtime'ı
+Hindi_filmler = df[(df['Language'] == 'Hindi')]
+print("Hindi filmlerin ortalama runtime" + str (Hindi_filmler["Runtime"].mean()))
+
+#Genre sütünuna sahip kategoriler
+gnr = df['Genre']
+gnr_list = gnr.unique()
+count= pd.value_counts(gnr)
+plt.bar(count.index, count)
+plt.xlabel('Genre')
+plt.ylabel('Frequency')
+plt.title('Genre Frequency')
+plt.show()
+
