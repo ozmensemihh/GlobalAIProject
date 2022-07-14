@@ -40,6 +40,7 @@ print("Hindi filmlerin ortalama runtime" + str (Hindi_filmler["Runtime"].mean())
 gnr = df['Genre']
 gnr_list = gnr.unique()
 count= pd.value_counts(gnr)
+plt.figure(figsize=(12,10))
 plt.bar(count.index, count)
 plt.xlabel('Genre')
 plt.ylabel('Frequency')
