@@ -18,3 +18,14 @@ plt.ylabel('Runtime')
 plt.title('Uzun Soluklu Max 10 Film')
 plt.show()
 
+
+# 2019 Ocak - 2020 Haziran arasında Documentary filmlerin IMDB puanlarını grafik olarak gösteriyor.
+IMDB = df[(df['Premiere'] >= "January 2019") & (df['Premiere'] <= "June 2020") & (df['Genre'] == 'Documentary')]
+IMDB_puan = IMDB['IMDB Score']
+plt.hist(IMDB_puan, bins=10)
+plt.xlabel('IMDB_Rating')
+plt.ylabel('Frequency')
+plt.title('Documentary Filmlerin IMDB Puanları')
+plt.show()
+
+
