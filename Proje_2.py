@@ -28,4 +28,6 @@ plt.ylabel('Frequency')
 plt.title('Documentary Filmlerin IMDB Puanları')
 plt.show()
 
-
+#İngilizce filmlerin en yüksek imdb puanına sahip tür filmleri
+IMDB_puan_ingilizce = df[(df['Language'] == 'English') & (df['IMDB Score'] >= 8.0)]
+print(IMDB_puan_ingilizce["Genre"])
