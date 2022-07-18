@@ -12,15 +12,39 @@ def veri_girdisi():
         dummy_list = []
         print("Lütfen öğrencinin adını giriniz: ")
         isim = str(input())
+        if isim == "" or isim.isdigit():
+            print("Lütfen geçerli isim giriniz.")
+            continue
         dummy_list.append(isim)
+
         print("Lütfen öğrencinin soyismini giriniz: ")
         soyisim = str(input())
+        if soyisim == "" or soyisim.isdigit():
+            print("Lütfen geçerli soyisim giriniz.")
+            continue
         dummy_list.append(soyisim)
+
         print("Lütfen öğrencinin okul numarasını giriniz: ")
-        numara = int(input())
+        try:
+            numara = int(input())
+        except ValueError:
+            print("Lütfen geçerli numara giriniz.")
+            continue
+        if numara == 0 or numara < 0 or numara > 99999:
+            print("Lütfen geçerli numara giriniz.")
+            continue
         dummy_list.append(numara)
+
         print("Lütfen öğrencinin notunu giriniz: ")
-        ders_notu = float(input())
+        try:
+            ders_notu = float(input())
+        except ValueError:
+            print("Lütfen geçerli not giriniz.")
+            continue
+        
+        if ders_notu == 0 or ders_notu < 0 or ders_notu > 100:
+            print("Lütfen geçerli not giriniz.")
+            continue
         dummy_list.append(ders_notu)
         print(dummy_list)
         #Oluşturulan öğrenci veri kimliğini depola
