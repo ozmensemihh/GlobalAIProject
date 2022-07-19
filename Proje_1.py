@@ -30,7 +30,7 @@ def veri_girdisi():
         except ValueError:
             print("Lütfen geçerli numara giriniz.")
             continue
-        if numara == 0 or numara < 0 or numara > 99999:
+        if numara <= 0 or numara > 99999:
             print("Lütfen geçerli numara giriniz.")
             continue
         dummy_list.append(numara)
@@ -42,7 +42,7 @@ def veri_girdisi():
             print("Lütfen geçerli not giriniz.")
             continue
         
-        if ders_notu == 0 or ders_notu < 0 or ders_notu > 100:
+        if ders_notu <= 0 or ders_notu > 100:
             print("Lütfen geçerli not giriniz.")
             continue
         dummy_list.append(ders_notu)
