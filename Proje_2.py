@@ -12,7 +12,7 @@ import matplotlib as mpl
 """
 
 @author: Maksut Yazar
-@author: Umut Gökdemir
+@author: Ahmet Umut Gökdemir
 @author: Semih Özmen
 
 
@@ -150,6 +150,8 @@ date.index=pd.to_datetime(date.index)
 date.index.name="Date"
 date=date.resample("A").count().sort_values(ascending=False)
 print("en fazla film yayımlanan yıl: \n{0}".format(date.head(1)))
+sb.barplot(x=date.index,y=date)
+plt.xticks(rotation=90)
 
 print(100*"*")
 
